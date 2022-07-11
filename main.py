@@ -29,13 +29,13 @@ months = ['睦月', '如月', '弥生', '卯月', '皐月', '水無月', '文月
 def main():
 
     leap_month = ''
-    lunardate = lunarcalendar.Lunar.from_date(datetime.date(2022, 6, 29))
+    lunardate = lunarcalendar.Lunar.from_date(datetime.date.today())
 
     season = lunardate.year - 1885
     if lunardate.isleap :
         leap_month = '閏'
 
-    print(f'第{to_jp_number(season)}季 {leap_month}{months[lunardate.month - 1]} {to_jp_number(lunardate.day)}日')
+    print(f'第{to_jp_number(season)}季・{leap_month}{months[lunardate.month - 1]}・{to_jp_number(lunardate.day)}日')
 
 if __name__ == '__main__':
     main()
